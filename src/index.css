@@ -2,8 +2,8 @@
 
 :root {
   /* High Contrast monochrome scheme */
-  --bg-color: var(--bg-color);
-  --surface-color: var(--bg-color);
+  --bg-color: #ffffff;
+  --surface-color: #ffffff;
   --surface-hover: #f3f4f6;
   --surface-glass: #ffffff;
   --border-color: var(--text-primary);
@@ -41,7 +41,7 @@
   --surface-color: #1e1e1e;
   --surface-hover: #2a2a2a;
   --surface-glass: #1e1e1e;
-  --border-color: var(--bg-color);
+  --border-color: var(--text-primary);
   
   --primary: #ffffff;
   --primary-glow: #2a2a2a;
