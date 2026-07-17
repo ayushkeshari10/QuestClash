@@ -57,24 +57,24 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
           className={`mobile-tab-btn ${mobileTab === 'mine' ? 'active' : ''}`}
           onClick={() => setMobileTab('mine')}
         >
-          <User size={13} />
-          <span>Mine ({myTasks.length})</span>
+          <User size={13} style={{ flexShrink: 0 }} />
+          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>Mine ({myTasks.length})</span>
         </button>
         <button
           className={`mobile-tab-btn ${mobileTab === 'oppB' ? 'active' : ''}`}
           onClick={() => setMobileTab('oppB')}
           disabled={!oppBData}
         >
-          <Swords size={13} />
-          <span>{oppBData ? oppBData.username : 'Opponent 1'} ({oppBTasks.length})</span>
+          {oppBData ? <Swords size={13} style={{ flexShrink: 0 }} /> : <UserPlus size={13} style={{ flexShrink: 0 }} />}
+          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{oppBData ? oppBData.username : 'Empty'} ({oppBTasks.length})</span>
         </button>
         <button
           className={`mobile-tab-btn ${mobileTab === 'oppC' ? 'active' : ''}`}
           onClick={() => setMobileTab('oppC')}
           disabled={!oppCData}
         >
-          <Swords size={13} />
-          <span>{oppCData ? oppCData.username : 'Opponent 2'} ({oppCTasks.length})</span>
+          {oppCData ? <Swords size={13} style={{ flexShrink: 0 }} /> : <UserPlus size={13} style={{ flexShrink: 0 }} />}
+          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{oppCData ? oppCData.username : 'Empty'} ({oppCTasks.length})</span>
         </button>
       </div>
 
@@ -233,12 +233,12 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
 
         .mobile-tab-selectors {
           display: none;
-          grid-template-columns: 1fr 1fr 1fr;
-          gap: 4px;
+          gap: 8px;
+          margin-bottom: 20px;
           padding: 4px;
           background: var(--surface-color);
-          margin-bottom: 16px;
-          box-shadow: var(--shadow-sm);
+          border-radius: 12px;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
         .mobile-tab-btn {
@@ -251,6 +251,7 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
           box-shadow: none;
           border: none;
           border-radius: 6px;
+          min-width: 0;
         }
 
         .mobile-tab-btn:disabled {
