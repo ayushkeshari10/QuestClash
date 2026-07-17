@@ -268,6 +268,10 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
           display: grid;
           gap: 20px;
         }
+        
+        .task-columns-layout > * {
+          min-width: 0;
+        }
 
         .layout-three-cols {
           grid-template-columns: 1fr 1fr 1fr;
@@ -405,27 +409,17 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
             gap: 20px;
           }
           .opponent-column {
-            border-top: 2px dashed #000;
-            padding-top: 16px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .mobile-tab-selectors {
-            display: grid !important;
-          }
-          .task-columns-layout {
-            grid-template-columns: 1fr !important;
-          }
-          .opponent-column {
             border: none;
             padding: 0;
           }
+          .mobile-tab-selectors {
+            display: grid !important;
+          }
           .mobile-hidden {
-            display: none;
+            display: none !important;
           }
           .mobile-visible {
-            display: flex;
+            display: flex !important;
           }
           .floating-add-btn {
             display: flex;

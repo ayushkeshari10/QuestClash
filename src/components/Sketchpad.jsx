@@ -202,6 +202,7 @@ export default function Sketchpad() {
           gap: 12px;
           box-shadow: var(--shadow-sm);
           margin-bottom: 20px;
+          min-width: 0;
         }
 
         .sketchpad-header {
@@ -219,6 +220,7 @@ export default function Sketchpad() {
           overflow-x: auto;
           gap: 16px;
           padding-bottom: 8px;
+          min-width: 0;
         }
 
         .sketchpad-panel {

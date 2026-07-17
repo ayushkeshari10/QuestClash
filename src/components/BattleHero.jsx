@@ -347,7 +347,7 @@ export default function BattleHero() {
           font-weight: 700;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .battle-hero-card {
             padding: 16px;
           }

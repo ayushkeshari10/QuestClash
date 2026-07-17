@@ -207,6 +207,10 @@ function AppContent() {
           gap: 24px;
           margin-top: 16px;
         }
+        
+        .arena-grid-layout > * {
+          min-width: 0;
+        }
 
         @media (max-width: 1024px) {
           .arena-grid-layout {

@@ -277,7 +277,7 @@ export default function Header({ currentTab, setCurrentTab, theme, toggleTheme }
           }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .header-container {
             flex-wrap: wrap;
             justify-content: space-between;

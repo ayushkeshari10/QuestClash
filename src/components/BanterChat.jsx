@@ -108,6 +108,7 @@ export default function BanterChat() {
           box-shadow: var(--shadow-sm);
           height: 480px;
           margin-bottom: 24px;
+          min-width: 0;
         }
 
         .banter-header {
