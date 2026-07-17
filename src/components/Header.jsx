@@ -264,6 +264,7 @@ export default function Header({ currentTab, setCurrentTab, theme, toggleTheme }
           box-shadow: 1px 1px 0px var(--border-color);
           background: var(--surface-color);
           color: var(--text-primary);
+          padding: 0;
         }
 
         .theme-toggle-btn:hover {
