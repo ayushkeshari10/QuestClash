@@ -1,11 +1,17 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useBattle } from '../context/BattleContext';
+import { playPop } from '../soundService';
 import { Sword, History as HistoryIcon, Home as HomeIcon, Swords, Trophy, Moon, Sun } from 'lucide-react';
 
 export default function Header({ currentTab, setCurrentTab, theme, toggleTheme }) {
   const { currentUser, logout } = useAuth();
   const { countdown, activeBattle, leaveBattle } = useBattle();
+
+  const handleTabClick = (tab) => {
+    playPop();
+    setCurrentTab(tab);
+  };
 
   return (
     <header className="main-header sketch-border">
@@ -30,28 +36,28 @@ export default function Header({ currentTab, setCurrentTab, theme, toggleTheme }
         <nav className="header-nav">
           <button 
             className={`nav-link-btn ${currentTab === 'home' ? 'active' : ''}`}
-            onClick={() => setCurrentTab('home')}
+            onClick={() => handleTabClick('home')}
           >
             <HomeIcon size={14} />
             <span>Home</span>
           </button>
           <button 
             className={`nav-link-btn ${currentTab === 'dashboard' ? 'active' : ''}`}
-            onClick={() => setCurrentTab('dashboard')}
+            onClick={() => handleTabClick('dashboard')}
           >
             <Swords size={14} />
             <span>Arena</span>
           </button>
           <button 
             className={`nav-link-btn ${currentTab === 'history' ? 'active' : ''}`}
-            onClick={() => setCurrentTab('history')}
+            onClick={() => handleTabClick('history')}
           >
             <HistoryIcon size={14} />
             <span>History</span>
           </button>
           <button 
             className={`nav-link-btn ${currentTab === 'leaderboard' ? 'active' : ''}`}
-            onClick={() => setCurrentTab('leaderboard')}
+            onClick={() => handleTabClick('leaderboard')}
           >
             <Trophy size={14} />
             <span>Ranks</span>
@@ -62,7 +68,7 @@ export default function Header({ currentTab, setCurrentTab, theme, toggleTheme }
         <div className="header-actions">
           <button 
             className="theme-toggle-btn sketch-border-subtle" 
-            onClick={toggleTheme}
+            onClick={() => { playPop(); toggleTheme(); }}
             title="Toggle Dark Mode"
           >
             {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
