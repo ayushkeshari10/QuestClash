@@ -282,7 +282,7 @@ export default function Sketchpad() {
 
         .size-btn.active {
           background: var(--text-primary);
-          color: #ffffff;
+          color: var(--bg-color);
         }
 
         .controls-actions {
@@ -304,7 +304,7 @@ export default function Sketchpad() {
 
         .action-btn-save {
           background: var(--text-primary);
-          color: #ffffff;
+          color: var(--bg-color);
         }
 
         .opponent-doodle-wrapper {

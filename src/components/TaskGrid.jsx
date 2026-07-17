@@ -260,7 +260,7 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
 
         .mobile-tab-btn.active {
           background: var(--text-primary);
-          color: #ffffff;
+          color: var(--bg-color);
         }
 
         .task-columns-layout {
@@ -385,7 +385,7 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
           height: 48px;
           border-radius: 50%;
           background: var(--text-primary);
-          color: #ffffff;
+          color: var(--bg-color);
           display: none;
           align-items: center;
           justify-content: center;

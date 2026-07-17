@@ -2,8 +2,8 @@
 
 :root {
   /* High Contrast monochrome scheme */
-  --bg-color: #ffffff;
-  --surface-color: #ffffff;
+  --bg-color: var(--bg-color);
+  --surface-color: var(--bg-color);
   --surface-hover: #f3f4f6;
   --surface-glass: #ffffff;
   --border-color: var(--text-primary);
@@ -41,7 +41,7 @@
   --surface-color: #1e1e1e;
   --surface-hover: #2a2a2a;
   --surface-glass: #1e1e1e;
-  --border-color: #ffffff;
+  --border-color: var(--bg-color);
   
   --primary: #ffffff;
   --primary-glow: #2a2a2a;
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb {
   background: var(--text-primary);
-  border: 2px solid #ffffff;
+  border: 2px solid var(--bg-color);
   border-radius: 4px;
 }
 
@@ -161,14 +161,14 @@ button:active {
 
 .btn-primary {
   background: var(--text-primary);
-  color: #ffffff;
+  color: var(--bg-color);
   box-shadow: var(--shadow-sm);
   border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
 }
 
 .btn-primary:hover {
   background: #222222;
-  color: #ffffff;
+  color: var(--bg-color);
   box-shadow: var(--shadow-md);
 }
 
