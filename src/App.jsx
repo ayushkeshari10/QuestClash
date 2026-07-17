@@ -14,6 +14,7 @@ import BanterChat from './components/BanterChat';
 import { AddTaskModal, PostponeModal, DailyReportModal } from './components/Modals';
 import Leaderboard from './components/Leaderboard';
 import BattleFeed from './components/BattleFeed';
+import { playPop } from './soundService';
 
 function AppContent() {
   const { currentUser } = useAuth();
@@ -26,6 +27,13 @@ function AppContent() {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+  // Global UI click sound for all buttons (using Capture phase so unmounting doesn't cancel it)
+  const handleGlobalClick = (e) => {
+    if (e.target.closest('button') || e.target.closest('.modal-close')) {
+      playPop();
+    }
+  };
 
   const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
 
@@ -156,7 +164,7 @@ function AppContent() {
   };
 
   return (
-    <>
+    <div onClickCapture={handleGlobalClick} style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header currentTab={currentTab} setCurrentTab={setCurrentTab} theme={theme} toggleTheme={toggleTheme} />
       
       <main className="app-container">
@@ -213,7 +221,7 @@ function AppContent() {
           }
         }
       `}</style>
-    </>
+    </div>
   );
 }
 

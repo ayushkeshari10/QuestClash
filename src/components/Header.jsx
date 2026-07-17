@@ -9,7 +9,6 @@ export default function Header({ currentTab, setCurrentTab, theme, toggleTheme }
   const { countdown, activeBattle, leaveBattle } = useBattle();
 
   const handleTabClick = (tab) => {
-    playPop();
     setCurrentTab(tab);
   };
 
@@ -68,7 +67,7 @@ export default function Header({ currentTab, setCurrentTab, theme, toggleTheme }
         <div className="header-actions">
           <button 
             className="theme-toggle-btn sketch-border-subtle" 
-            onClick={() => { playPop(); toggleTheme(); }}
+            onClick={toggleTheme}
             title="Toggle Dark Mode"
           >
             {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
