@@ -333,6 +333,14 @@ export default function Sketchpad() {
           font-size: 11px;
           text-align: center;
         }
+
+        @media (max-width: 1024px) {
+          .sketchpad-grid {
+            flex-direction: column;
+            align-items: center;
+            overflow-x: visible;
+          }
+        }
       `}</style>
     </div>
   );
