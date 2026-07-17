@@ -48,12 +48,13 @@ export const BattleProvider = ({ children }) => {
 
       let targetBattleId = profile?.battle_id;
 
-      // 2. If no battle_id is linked to the user's profile, check if there is an active battle lobby created today
+      // 2. If no battle_id is linked to the user's profile, check if there is an active battle lobby with OPEN SLOTS created today
       if (!targetBattleId) {
         const { data: latestActive } = await supabase
           .from('battles')
           .select('id')
           .eq('status', 'active')
+          .or('player_b_id.is.null,player_c_id.is.null')
           .order('started_at', { ascending: false })
           .limit(1);
 
@@ -247,11 +248,12 @@ export const BattleProvider = ({ children }) => {
   const joinActiveBattleLobby = async () => {
     if (!currentUser) return;
 
-    // Fetch freshest battle row to prevent slots race conditions
+    // Fetch freshest battle row with OPEN SLOTS to prevent race conditions
     const { data: latestActive } = await supabase
       .from('battles')
       .select('*')
       .eq('status', 'active')
+      .or('player_b_id.is.null,player_c_id.is.null')
       .order('started_at', { ascending: false })
       .limit(1);
 
