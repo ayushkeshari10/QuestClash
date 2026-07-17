@@ -204,7 +204,7 @@ export default function Login() {
         }
 
         .login-tab-btn.active {
-          background: #000000;
+          background: var(--text-primary);
           color: #ffffff;
         }
 

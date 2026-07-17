@@ -281,7 +281,7 @@ export default function Sketchpad() {
         }
 
         .size-btn.active {
-          background: #000000;
+          background: var(--text-primary);
           color: #ffffff;
         }
 
@@ -303,7 +303,7 @@ export default function Sketchpad() {
         }
 
         .action-btn-save {
-          background: #000000;
+          background: var(--text-primary);
           color: #ffffff;
         }
 

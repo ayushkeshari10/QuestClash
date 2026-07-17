@@ -92,30 +92,30 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-track {
   background: var(--surface-color);
-  border-left: 2px solid #000000;
+  border-left: 2px solid var(--border-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000000;
+  background: var(--text-primary);
   border: 2px solid #ffffff;
   border-radius: 4px;
 }
 
 /* Sketch Border Trick - uneven hand drawn borders */
 .sketch-border {
-  border: 2.5px solid #000000 !important;
+  border: 2.5px solid var(--border-color) !important;
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px !important;
 }
 
 .sketch-border-subtle {
-  border: 2px solid #000000 !important;
+  border: 2px solid var(--border-color) !important;
   border-radius: 12px 6px 10px 8px / 6px 10px 8px 12px !important;
 }
 
 /* Glassmorphism Classes redirected to sketch blocks */
 .glass-panel {
   background: var(--surface-color);
-  border: 2.5px solid #000000;
+  border: 2.5px solid var(--border-color);
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   box-shadow: var(--shadow-md);
 }
@@ -160,7 +160,7 @@ button:active {
 }
 
 .btn-primary {
-  background: #000000;
+  background: var(--text-primary);
   color: #ffffff;
   box-shadow: var(--shadow-sm);
   border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
@@ -182,7 +182,7 @@ button:active {
 .priority-high {
   background: var(--surface-color);
   color: var(--text-primary);
-  border: 2px solid #000000 !important;
+  border: 2px solid var(--border-color) !important;
   font-weight: 900;
 }
 
@@ -193,7 +193,7 @@ button:active {
 .priority-medium {
   background: var(--surface-color);
   color: var(--text-primary);
-  border: 2px dashed #000000 !important;
+  border: 2px dashed var(--border-color) !important;
 }
 
 .priority-low {
@@ -206,7 +206,7 @@ button:active {
 .status-completed {
   background: var(--surface-color);
   color: var(--text-primary);
-  border: 2px solid #000000 !important;
+  border: 2px solid var(--border-color) !important;
   text-decoration: line-through;
 }
 
@@ -217,7 +217,7 @@ button:active {
 .status-failed {
   background: var(--surface-color);
   color: var(--text-primary);
-  border: 2px double #000000 !important;
+  border: 2px double var(--border-color) !important;
 }
 
 .status-failed::before {
@@ -227,7 +227,7 @@ button:active {
 .status-postponed {
   background: var(--surface-color);
   color: var(--text-primary);
-  border: 2px dashed #000000 !important;
+  border: 2px dashed var(--border-color) !important;
 }
 
 .status-postponed::before {
@@ -237,7 +237,7 @@ button:active {
 .status-pending {
   background: var(--surface-color);
   color: var(--text-primary);
-  border: 2px solid #000000 !important;
+  border: 2px solid var(--border-color) !important;
 }
 
 /* Input Fields */
@@ -245,32 +245,32 @@ input[type="text"],
 textarea, 
 input[type="time"] {
   background: var(--surface-color) !important;
-  border: 2.5px solid #000000 !important;
+  border: 2.5px solid var(--border-color) !important;
   border-radius: 12px 6px 10px 8px / 6px 10px 8px 12px !important;
   padding: 12px !important;
-  color: #000000 !important;
+  color: var(--text-primary) !important;
   font-family: var(--font-body) !important;
   outline: none !important;
-  box-shadow: 2px 2px 0px #000000 !important;
+  box-shadow: 2px 2px 0px var(--border-color) !important;
 }
 
 input[type="text"]:focus, 
 textarea:focus, 
 input[type="time"]:focus {
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px #000000 !important;
+  box-shadow: 3px 3px 0px var(--border-color) !important;
 }
 
 /* Progress Bar styles */
 .matchup-progress-bg {
-  border: 2px solid #000000 !important;
+  border: 2px solid var(--border-color) !important;
   background: var(--surface-color) !important;
   height: 14px !important;
   border-radius: 8px !important;
 }
 
 .matchup-progress-fill {
-  background: #000000 !important;
+  background: var(--text-primary) !important;
   transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -305,7 +305,7 @@ input[type="time"]:focus {
   background: var(--surface-color) !important;
   width: 100%;
   max-width: 500px;
-  box-shadow: 6px 6px 0px #000000 !important;
+  box-shadow: 6px 6px 0px var(--border-color) !important;
   display: flex;
   flex-direction: column;
   max-height: calc(100vh - 48px);
@@ -316,7 +316,7 @@ input[type="time"]:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2.5px solid #000000;
+  border-bottom: 2.5px solid var(--border-color);
   padding: 16px 20px;
 }
 
@@ -402,7 +402,7 @@ input[type="time"]:focus {
   width: 100%;
   max-width: 800px;
   padding: 32px;
-  box-shadow: 8px 8px 0px #000000 !important;
+  box-shadow: 8px 8px 0px var(--border-color) !important;
   display: flex;
   flex-direction: column;
   align-items: center;

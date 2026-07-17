@@ -193,11 +193,9 @@ export const BattleProvider = ({ children }) => {
         await refreshActiveBattle();
       })
       .on('broadcast', { event: 'task-feed' }, (payload) => {
-        // We can add a sound effect here natively in the browser
+        // Play native synthesized sound instead of missing MP3 file
         try {
-          const audio = new Audio('/success-bell.mp3'); // We'll assume they can add this file later or use a generic ding
-          audio.volume = 0.5;
-          audio.play().catch(()=> {}); // Ignore auto-play blocks
+          playDing();
         } catch (e) {}
 
         setFeedEvents(prev => [...prev, payload.payload].slice(-5));

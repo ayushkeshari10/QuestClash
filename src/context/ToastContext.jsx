@@ -79,14 +79,14 @@ export const ToastProvider = ({ children }) => {
 
         .toast-card {
           background: var(--surface-color);
-          border: 2.5px solid #000000;
+          border: 2.5px solid var(--border-color);
           border-radius: 12px 6px 10px 8px / 6px 10px 8px 12px;
           padding: 14px 16px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           gap: 12px;
-          box-shadow: 4px 4px 0px #000000;
+          box-shadow: 4px 4px 0px var(--border-color);
           color: var(--text-primary);
           font-family: var(--font-body);
         }

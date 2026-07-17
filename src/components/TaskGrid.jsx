@@ -259,7 +259,7 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
         }
 
         .mobile-tab-btn.active {
-          background: #000000;
+          background: var(--text-primary);
           color: #ffffff;
         }
 
@@ -384,7 +384,7 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
           width: 48px;
           height: 48px;
           border-radius: 50%;
-          background: #000000;
+          background: var(--text-primary);
           color: #ffffff;
           display: none;
           align-items: center;

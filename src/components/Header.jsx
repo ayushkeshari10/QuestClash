@@ -257,6 +257,7 @@ export default function Header({ currentTab, setCurrentTab, theme, toggleTheme }
           border-radius: 50%;
           box-shadow: 1px 1px 0px var(--border-color);
           background: var(--surface-color);
+          color: var(--text-primary);
         }
 
         .theme-toggle-btn:hover {
@@ -273,7 +274,7 @@ export default function Header({ currentTab, setCurrentTab, theme, toggleTheme }
         @media (max-width: 768px) {
           .header-container {
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
           }
           .header-nav {
             width: 100%;

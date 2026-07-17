@@ -284,7 +284,7 @@ export default function BattleHero() {
 
         .matchup-progress-fill {
           height: 100%;
-          background: #000000;
+          background: var(--text-primary);
           transition: width 0.4s ease-out;
         }
 
