@@ -245,7 +245,7 @@ export default function History() {
           align-items: center;
           justify-content: center;
           gap: 12px;
-          background: #ffffff;
+          background: var(--surface-color);
           box-shadow: var(--shadow-sm);
         }
 
@@ -261,7 +261,7 @@ export default function History() {
 
         .history-item-card {
           padding: 16px;
-          background: #ffffff;
+          background: var(--surface-color);
           display: flex;
           flex-direction: column;
           gap: 12px;
@@ -280,7 +280,7 @@ export default function History() {
           justify-content: space-between;
           align-items: center;
           gap: 12px;
-          border-bottom: 2px solid #000;
+          border-bottom: 2px solid var(--border-color);
           padding-bottom: 8px;
         }
 
@@ -298,16 +298,16 @@ export default function History() {
           font-weight: 700;
           text-transform: uppercase;
           padding: 2px 8px;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .history-winner-badge.win {
-          background: #ffffff;
-          color: #000;
+          background: var(--surface-color);
+          color: var(--text-primary);
         }
 
         .history-winner-badge.draw {
-          background: #ffffff;
+          background: var(--surface-color);
           color: var(--text-muted);
         }
 
@@ -335,7 +335,7 @@ export default function History() {
         }
 
         .pts-highlight {
-          color: #000;
+          color: var(--text-primary);
           font-weight: 700;
         }
 
@@ -390,12 +390,12 @@ export default function History() {
 
         .player-detail-sheet {
           padding: 14px;
-          background: #ffffff;
+          background: var(--surface-color);
         }
 
         .player-detail-sheet h4 {
           font-size: 16px;
-          border-bottom: 2px solid #000;
+          border-bottom: 2px solid var(--border-color);
           padding-bottom: 4px;
           margin-bottom: 8px;
         }
@@ -453,7 +453,7 @@ export default function History() {
 
         .task-title-text {
           font-weight: 700;
-          color: #000;
+          color: var(--text-primary);
           font-family: var(--font-body);
         }
 

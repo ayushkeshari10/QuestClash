@@ -78,7 +78,7 @@ export const ToastProvider = ({ children }) => {
         }
 
         .toast-card {
-          background: #ffffff;
+          background: var(--surface-color);
           border: 2.5px solid #000000;
           border-radius: 12px 6px 10px 8px / 6px 10px 8px 12px;
           padding: 14px 16px;
@@ -87,7 +87,7 @@ export const ToastProvider = ({ children }) => {
           align-items: center;
           gap: 12px;
           box-shadow: 4px 4px 0px #000000;
-          color: #000000;
+          color: var(--text-primary);
           font-family: var(--font-body);
         }
 
@@ -98,7 +98,7 @@ export const ToastProvider = ({ children }) => {
         }
 
         .toast-message {
-          color: #000000;
+          color: var(--text-primary);
           font-size: 14px;
           font-weight: 700;
           line-height: 1.4;
@@ -107,7 +107,7 @@ export const ToastProvider = ({ children }) => {
         .toast-close-btn {
           background: transparent;
           border: none;
-          color: #000000;
+          color: var(--text-primary);
           padding: 2px;
           border-radius: 4px;
           display: flex;
@@ -117,7 +117,7 @@ export const ToastProvider = ({ children }) => {
         }
 
         .toast-close-btn:hover {
-          color: #000000;
+          color: var(--text-primary);
           background: #f3f4f6;
           transform: scale(1.1);
           box-shadow: none;

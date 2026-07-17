@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useRef, useCallb
 import { useAuth } from './AuthContext';
 import { useToast } from './ToastContext';
 import { supabase } from '../supabaseClient';
+import { playDing, playError } from '../soundService';
 
 const BattleContext = createContext(null);
 
@@ -343,6 +344,7 @@ export const BattleProvider = ({ children }) => {
     } else {
       await refreshActiveBattle();
       if (newStatus === 'completed') {
+        playDing();
         toast.success('Task Completed! +1 Point');
         
         // Broadcast to everyone else in the arena
@@ -365,6 +367,7 @@ export const BattleProvider = ({ children }) => {
           }].slice(-5));
         }
       } else if (newStatus === 'failed') {
+        playError();
         toast.error('Marked as Failed');
       }
     }
@@ -386,6 +389,7 @@ export const BattleProvider = ({ children }) => {
       toast.error('Failed to postpone task');
     } else {
       await refreshActiveBattle();
+      playError();
       toast.warning(`Task postponed to ${newTime}`);
     }
   };

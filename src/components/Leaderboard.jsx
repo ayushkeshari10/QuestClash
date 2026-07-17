@@ -85,7 +85,7 @@ export default function Leaderboard() {
           padding: 12px 0;
         }
         .leaderboard-card {
-          background: #ffffff;
+          background: var(--surface-color);
           padding: 24px;
           box-shadow: var(--shadow-md);
         }
@@ -95,7 +95,7 @@ export default function Leaderboard() {
           gap: 12px;
           margin-bottom: 24px;
           padding-bottom: 16px;
-          border-bottom: 2px solid #000;
+          border-bottom: 2px solid var(--border-color);
         }
         .leaderboard-header h2 {
           font-size: 24px;
@@ -160,6 +160,17 @@ export default function Leaderboard() {
           padding: 32px;
           color: var(--text-muted);
           font-style: italic;
+        }
+        @media (max-width: 768px) {
+          .leaderboard-wrapper {
+            padding: 12px 16px;
+          }
+          .leaderboard-card {
+            padding: 16px;
+          }
+          .leaderboard-row {
+            padding: 12px;
+          }
         }
       `}</style>
     </div>

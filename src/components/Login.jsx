@@ -23,7 +23,7 @@ export default function Login() {
     try {
       if (isRegister) {
         await register(username, password, selectedAvatar);
-        toast.success(`Welcome to Todo Battle, ${username}!`);
+        toast.success(`Welcome to QuestClash, ${username}!`);
       } else {
         await login(username, password);
         toast.success(`Welcome back, ${username}!`);
@@ -42,7 +42,7 @@ export default function Login() {
           <div className="brand-logo-ring sketch-border-subtle">
             <Sword className="brand-logo-icon text-primary animate-float" size={28} />
           </div>
-          <h2>Todo Battle</h2>
+          <h2>QuestClash</h2>
           <p className="brand-slogan">Slay your tasks, beat your friends.</p>
         </div>
 
@@ -150,7 +150,7 @@ export default function Login() {
           width: 100%;
           max-width: 440px;
           padding: 32px;
-          background: #ffffff;
+          background: var(--surface-color);
           box-shadow: var(--shadow-md);
           display: flex;
           flex-direction: column;
@@ -168,7 +168,7 @@ export default function Login() {
         .brand-logo-ring {
           width: 60px;
           height: 60px;
-          background: #ffffff;
+          background: var(--surface-color);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -189,9 +189,9 @@ export default function Login() {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 4px;
-          background: #ffffff;
+          background: var(--surface-color);
           padding: 4px;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .login-tab-btn {
@@ -275,7 +275,7 @@ export default function Login() {
         }
 
         .avatar-choice-btn.selected {
-          border-color: #000;
+          border-color: var(--text-primary);
           transform: scale(1.1);
         }
 
@@ -285,7 +285,7 @@ export default function Login() {
           border-radius: 50%;
           object-fit: cover;
           aspect-ratio: 1/1;
-          border: 1px solid #000;
+          border: 1px solid var(--border-color);
         }
 
         .auth-submit-btn {

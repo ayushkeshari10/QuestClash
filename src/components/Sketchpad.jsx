@@ -195,7 +195,7 @@ export default function Sketchpad() {
 
       <style>{`
         .sketchpad-container {
-          background: #ffffff;
+          background: var(--surface-color);
           padding: 16px;
           display: flex;
           flex-direction: column;
@@ -205,7 +205,7 @@ export default function Sketchpad() {
         }
 
         .sketchpad-header {
-          border-bottom: 2px solid #000;
+          border-bottom: 2px solid var(--border-color);
           padding-bottom: 6px;
         }
 
@@ -215,19 +215,21 @@ export default function Sketchpad() {
         }
 
         .sketchpad-grid {
-          display: grid;
-          grid-template-columns: 1fr;
+          display: flex;
+          overflow-x: auto;
           gap: 16px;
+          padding-bottom: 8px;
         }
 
         .sketchpad-panel {
           padding: 12px;
-          background: #ffffff;
+          background: var(--surface-color);
           display: flex;
           flex-direction: column;
           gap: 8px;
           align-items: center;
-          width: 100%;
+          flex: 0 0 auto;
+          width: 270px;
         }
 
         .sketchpad-panel h3 {
@@ -239,14 +241,14 @@ export default function Sketchpad() {
         }
 
         .canvas-wrapper {
-          border: 2px solid #000;
-          background: #ffffff;
+          border: 2px solid var(--border-color);
+          background: var(--surface-color);
           border-radius: 6px;
           overflow: hidden;
           width: 240px;
           height: 150px;
           cursor: crosshair;
-          box-shadow: 2px 2px 0px #000;
+          box-shadow: 2px 2px 0px var(--border-color);
         }
 
         .doodle-canvas {
@@ -297,7 +299,7 @@ export default function Sketchpad() {
         }
 
         .action-btn-danger:hover {
-          background: #fee2e2;
+          background: var(--failed-glow);
         }
 
         .action-btn-save {
@@ -306,10 +308,10 @@ export default function Sketchpad() {
         }
 
         .opponent-doodle-wrapper {
-          border: 2px solid #000;
-          background: #ffffff;
+          border: 2px solid var(--border-color);
+          background: var(--surface-color);
           border-radius: 6px;
-          box-shadow: 2px 2px 0px #000;
+          box-shadow: 2px 2px 0px var(--border-color);
           display: flex;
           align-items: center;
           justify-content: center;

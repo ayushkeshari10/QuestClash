@@ -87,7 +87,7 @@ export default function SetupBattle() {
 
         .setup-action-card {
           padding: 32px 24px;
-          background: #ffffff;
+          background: var(--surface-color);
           box-shadow: var(--shadow-sm);
           display: flex;
           flex-direction: column;
@@ -102,8 +102,8 @@ export default function SetupBattle() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #ffffff;
-          box-shadow: 1px 1px 0px #000;
+          background: var(--surface-color);
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .setup-action-card h3 {
@@ -124,7 +124,7 @@ export default function SetupBattle() {
 
         .setup-tip-banner {
           padding: 16px;
-          background: #ffffff;
+          background: var(--surface-color);
           display: flex;
           flex-direction: column;
           gap: 6px;
@@ -141,6 +141,12 @@ export default function SetupBattle() {
           font-size: 13px;
           color: var(--text-muted);
           line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+          .setup-battle-wrapper {
+            padding: 24px 16px;
+          }
         }
       `}</style>
     </div>

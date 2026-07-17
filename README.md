@@ -1,16 +1,16 @@
-# ⚔️ Todo Battle
+# ⚔️ QuestClash
 
-> **Not your average to-do app.** Todo Battle is a real-time, multiplayer productivity game — where your task list becomes a weapon.
+> **Not your average to-do app.** QuestClash is a real-time, multiplayer productivity game — where your task list becomes a weapon.
 
 ---
 
 ## What Makes It Different?
 
-Most to-do apps are solo. Todo Battle is **competitive**.
+Most to-do apps are solo. QuestClash is **competitive**.
 
 Instead of quietly checking off tasks alone, you battle up to 2 other players in a shared arena. Everyone adds their own tasks for the day, and at the stroke of midnight — **whoever completed the most wins**. Points are earned in real-time, visible to everyone, and the pressure of being watched makes you actually get things done.
 
-| Regular To-Do App | Todo Battle |
+| Regular To-Do App | QuestClash |
 |---|---|
 | Solo, private lists | Live multiplayer arena (up to 3 players) |
 | No accountability | Opponents can see your progress in real-time |

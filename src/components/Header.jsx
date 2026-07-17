@@ -1,9 +1,9 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useBattle } from '../context/BattleContext';
-import { Sword, History as HistoryIcon, Home as HomeIcon, Swords, Trophy } from 'lucide-react';
+import { Sword, History as HistoryIcon, Home as HomeIcon, Swords, Trophy, Moon, Sun } from 'lucide-react';
 
-export default function Header({ currentTab, setCurrentTab }) {
+export default function Header({ currentTab, setCurrentTab, theme, toggleTheme }) {
   const { currentUser, logout } = useAuth();
   const { countdown, activeBattle, leaveBattle } = useBattle();
 
@@ -15,7 +15,7 @@ export default function Header({ currentTab, setCurrentTab }) {
           <div className="logo-icon-container sketch-border-subtle">
             <Sword className="logo-icon text-primary animate-float" size={18} />
           </div>
-          <span className="logo-text">Todo Battle</span>
+          <span className="logo-text">QuestClash</span>
         </div>
 
         {/* Live Countdown Clock */}
@@ -60,6 +60,14 @@ export default function Header({ currentTab, setCurrentTab }) {
 
         {/* Profile and Logout */}
         <div className="header-actions">
+          <button 
+            className="theme-toggle-btn sketch-border-subtle" 
+            onClick={toggleTheme}
+            title="Toggle Dark Mode"
+          >
+            {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+          </button>
+
           {currentUser && activeBattle && (
             <button 
               onClick={leaveBattle} 
@@ -91,7 +99,7 @@ export default function Header({ currentTab, setCurrentTab }) {
           position: sticky;
           top: 0;
           z-index: 1000;
-          background: #ffffff;
+          background: var(--surface-color);
           border-left: none !important;
           border-right: none !important;
           border-top: none !important;
@@ -122,8 +130,8 @@ export default function Header({ currentTab, setCurrentTab }) {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #ffffff;
-          box-shadow: 1px 1px 0px #000;
+          background: var(--surface-color);
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .logo-text {
@@ -133,12 +141,12 @@ export default function Header({ currentTab, setCurrentTab }) {
         }
 
         .header-timer {
-          background: #ffffff;
+          background: var(--surface-color);
           padding: 4px 12px;
           display: flex;
           align-items: center;
           gap: 8px;
-          box-shadow: 2px 2px 0px #000;
+          box-shadow: 2px 2px 0px var(--border-color);
         }
 
         .timer-label {
@@ -148,7 +156,7 @@ export default function Header({ currentTab, setCurrentTab }) {
         }
 
         .timer-clock {
-          color: #000000;
+          color: var(--text-primary);
           font-size: 13px;
           font-weight: 700;
         }
@@ -165,18 +173,18 @@ export default function Header({ currentTab, setCurrentTab }) {
           gap: 6px;
           padding: 6px 12px;
           font-size: 13px;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
           border-radius: 12px 6px 10px 8px / 6px 10px 8px 12px;
         }
 
         .nav-link-btn:hover {
           transform: translate(-1px, -1px);
-          box-shadow: 2px 2px 0px #000;
+          box-shadow: 2px 2px 0px var(--border-color);
         }
 
         .nav-link-btn.active {
-          background: #000000;
-          color: #ffffff;
+          background: var(--text-primary);
+          color: var(--bg-color);
           box-shadow: none;
           transform: none;
         }
@@ -192,15 +200,15 @@ export default function Header({ currentTab, setCurrentTab }) {
           align-items: center;
           gap: 8px;
           padding: 4px 10px;
-          background: #ffffff;
-          box-shadow: 1px 1px 0px #000;
+          background: var(--surface-color);
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .user-avatar {
           width: 24px;
           height: 24px;
           border-radius: 50%;
-          border: 1px solid #000;
+          border: 1px solid var(--border-color);
           object-fit: cover;
         }
 
@@ -210,7 +218,7 @@ export default function Header({ currentTab, setCurrentTab }) {
         }
 
         .user-name {
-          color: #000000;
+          color: var(--text-primary);
           font-size: 13px;
           font-weight: 700;
         }
@@ -219,25 +227,41 @@ export default function Header({ currentTab, setCurrentTab }) {
           font-size: 11px;
           padding: 2px 6px;
           border-radius: 4px;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .logout-btn:hover {
-          background: #fee2e2;
+          background: var(--failed-glow);
         }
 
         .leave-lobby-btn {
           font-size: 11px;
           padding: 4px 8px;
           border-radius: 6px;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
           font-weight: 700;
         }
 
         .leave-lobby-btn:hover {
-          background: #fee2e2;
+          background: var(--failed-glow);
           transform: translate(-1px, -1px);
-          box-shadow: 2px 2px 0px #000;
+          box-shadow: 2px 2px 0px var(--border-color);
+        }
+
+        .theme-toggle-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          box-shadow: 1px 1px 0px var(--border-color);
+          background: var(--surface-color);
+        }
+
+        .theme-toggle-btn:hover {
+          transform: translate(-1px, -1px);
+          box-shadow: 2px 2px 0px var(--border-color);
         }
 
         @media (max-width: 900px) {
@@ -246,12 +270,26 @@ export default function Header({ currentTab, setCurrentTab }) {
           }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
+          .header-container {
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          .header-nav {
+            width: 100%;
+            justify-content: center;
+            order: 3;
+            margin-top: 8px;
+            margin-bottom: 4px;
+          }
           .header-timer {
-            display: none;
+            display: flex;
+            order: 4;
+            width: 100%;
+            justify-content: center;
           }
           .logo-text {
-            display: none;
+            font-size: 16px;
           }
         }
       `}</style>

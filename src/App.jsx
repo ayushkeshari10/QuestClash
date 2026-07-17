@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
 import { BattleProvider, useBattle } from './context/BattleContext';
@@ -20,6 +20,15 @@ function AppContent() {
   const { activeBattle, getPlayerIndex, joinActiveBattleLobby } = useBattle();
   const [currentTab, setCurrentTab] = useState('home'); // 'home' | 'dashboard' | 'history'
   
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
+
   // Modal states
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [postponeTaskId, setPostponeTaskId] = useState(null);
@@ -94,7 +103,7 @@ function AppContent() {
                 }
                 .prompt-card {
                   max-width: 440px;
-                  background: #ffffff;
+                  background: var(--surface-color);
                   padding: 32px 24px;
                   text-align: center;
                   display: flex;
@@ -132,7 +141,7 @@ function AppContent() {
               }
               .prompt-card {
                 max-width: 440px;
-                background: #ffffff;
+                background: var(--surface-color);
                 padding: 32px 24px;
                 text-align: center;
                 display: flex;
@@ -148,7 +157,7 @@ function AppContent() {
 
   return (
     <>
-      <Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
+      <Header currentTab={currentTab} setCurrentTab={setCurrentTab} theme={theme} toggleTheme={toggleTheme} />
       
       <main className="app-container">
         {renderTabContent()}
@@ -174,7 +183,7 @@ function AppContent() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #ffffff;
+          background: var(--bg-color);
         }
 
         .app-container {

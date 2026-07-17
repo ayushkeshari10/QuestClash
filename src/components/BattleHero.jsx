@@ -172,18 +172,18 @@ export default function BattleHero() {
 
         .battle-hero-card {
           padding: 20px;
-          background: #ffffff;
+          background: var(--surface-color);
           box-shadow: var(--shadow-sm);
         }
 
         .mobile-timer {
           display: none;
-          background: #ffffff;
+          background: var(--surface-color);
           padding: 4px 10px;
           align-items: center;
           justify-content: space-between;
           margin-bottom: 12px;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .mobile-timer-lbl {
@@ -224,7 +224,7 @@ export default function BattleHero() {
           width: 48px;
           height: 48px;
           border-radius: 50%;
-          border: 2px solid #000;
+          border: 2px solid var(--border-color);
           object-fit: cover;
         }
 
@@ -237,12 +237,12 @@ export default function BattleHero() {
           position: absolute;
           bottom: -4px;
           right: -4px;
-          background: #ffffff;
-          color: #000;
+          background: var(--surface-color);
+          color: var(--text-primary);
           border: 1.5px solid #000;
           border-radius: 50%;
           padding: 1px;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .matchup-info {
@@ -265,7 +265,7 @@ export default function BattleHero() {
         }
 
         .matchup-pts {
-          color: #000;
+          color: var(--text-primary);
           font-weight: 700;
         }
 
@@ -275,11 +275,11 @@ export default function BattleHero() {
 
         .matchup-progress-bg {
           height: 10px;
-          background: #ffffff;
-          border: 2px solid #000;
+          background: var(--surface-color);
+          border: 2px solid var(--border-color);
           border-radius: 6px;
           overflow: hidden;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .matchup-progress-fill {
@@ -300,8 +300,8 @@ export default function BattleHero() {
           font-weight: 800;
           padding: 4px 8px;
           border-radius: 6px;
-          background: #ffffff;
-          box-shadow: 1px 1px 0px #000;
+          background: var(--surface-color);
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .waiting-placeholder {
@@ -333,14 +333,14 @@ export default function BattleHero() {
           display: flex;
           align-items: center;
           gap: 8px;
-          background: #ffffff;
+          background: var(--surface-color);
           padding: 8px 16px;
           border-radius: 6px;
           font-size: 12px;
         }
 
         .leader-icon {
-          color: #000;
+          color: var(--text-primary);
         }
 
         .leader-text {
@@ -348,6 +348,9 @@ export default function BattleHero() {
         }
 
         @media (max-width: 768px) {
+          .battle-hero-card {
+            padding: 16px;
+          }
           .battle-matchup.three-player-matchup {
             grid-template-columns: 1fr;
             gap: 16px;
@@ -356,8 +359,29 @@ export default function BattleHero() {
             display: none;
           }
           .player-matchup-column {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-areas: 
+              "avatar info"
+              "progress progress";
+            gap: 8px 12px;
+            align-items: center;
             border-bottom: 1.5px dashed rgba(0,0,0,0.1);
             padding-bottom: 12px;
+          }
+          .player-matchup-column.waiting-column {
+            display: flex;
+            flex-direction: row;
+          }
+          .avatar-wrapper {
+            grid-area: avatar;
+          }
+          .matchup-info {
+            grid-area: info;
+          }
+          .matchup-progress-bg {
+            grid-area: progress;
+            margin-top: 4px;
           }
           .player-matchup-column:last-child {
             border: none;

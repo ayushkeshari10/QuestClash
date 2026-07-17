@@ -236,7 +236,7 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
           grid-template-columns: 1fr 1fr 1fr;
           gap: 4px;
           padding: 4px;
-          background: #ffffff;
+          background: var(--surface-color);
           margin-bottom: 16px;
           box-shadow: var(--shadow-sm);
         }
@@ -313,7 +313,7 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
           font-size: 10px;
           font-weight: 700;
           padding: 2px 6px;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .tasks-scroll-area {
@@ -329,7 +329,7 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
         }
 
         .empty-tasks-placeholder {
-          background: #ffffff;
+          background: var(--surface-color);
           padding: 24px 12px;
           text-align: center;
           display: flex;
@@ -409,7 +409,7 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
           }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .mobile-tab-selectors {
             display: grid;
           }

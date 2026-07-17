@@ -3,6 +3,7 @@ import { useBattle } from '../context/BattleContext';
 import { useToast } from '../context/ToastContext';
 import { Calendar, Clock, Lock, Star, Trophy, X, Wand2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { playBloop } from '../soundService';
 
 // ----------------------------------------------------
 // 1. ADD TASK MODAL
@@ -32,6 +33,7 @@ export function AddTaskModal({ isOpen, onClose }) {
         await addTask(sub, `AI Subtask of: ${title}`, priority, time);
       }
       
+      playBloop();
       toast.success("AI broke down your goal into actionable tasks!");
       setTitle('');
       setDescription('');
@@ -397,7 +399,7 @@ export function AcceptChallengeModal({ challenge, onAccept, onReject }) {
 
         <div className="modal-body" style={{ padding: '20px', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <p style={{ fontSize: '15px' }}>
-            <strong>{challenge.from}</strong> has challenged you to a Todo Battle today!
+            <strong>{challenge.from}</strong> has challenged you to a QuestClash today!
           </p>
           <p className="font-mono text-muted" style={{ fontSize: '12px' }}>
             Lobby Invite Code: <strong>{challenge.battleCode}</strong>

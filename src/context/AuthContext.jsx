@@ -144,7 +144,7 @@ export const AuthProvider = ({ children }) => {
       ) : (
         <div className="app-global-loader">
           <div className="sketch-border loader-card font-mono animate-float">
-            <h3>✍️ LOADING TODO BATTLE...</h3>
+            <h3>✍️ LOADING QUESTCLASH...</h3>
             <p>Syncing database tables...</p>
           </div>
           <style>{`
@@ -153,11 +153,11 @@ export const AuthProvider = ({ children }) => {
               display: flex;
               align-items: center;
               justify-content: center;
-              background: #ffffff;
+              background: var(--surface-color);
             }
             .loader-card {
               padding: 24px 32px;
-              background: #ffffff;
+              background: var(--surface-color);
               box-shadow: var(--shadow-md);
               text-align: center;
               display: flex;

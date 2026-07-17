@@ -134,7 +134,7 @@ export default function TaskCard({ task, onComplete, onFail, onPostpone, readOnl
           flex-direction: column;
           gap: 10px;
           position: relative;
-          background: #ffffff;
+          background: var(--surface-color);
         }
 
         .task-card-header {
@@ -167,13 +167,13 @@ export default function TaskCard({ task, onComplete, onFail, onPostpone, readOnl
           display: flex;
           align-items: center;
           gap: 4px;
-          border: 1px solid #000;
+          border: 1px solid var(--border-color);
           padding: 2px 6px;
           border-radius: 4px;
         }
 
         .time-icon {
-          color: #000;
+          color: var(--text-primary);
         }
 
         .task-card-body {
@@ -216,14 +216,14 @@ export default function TaskCard({ task, onComplete, onFail, onPostpone, readOnl
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #ffffff;
+          background: var(--surface-color);
           border: 1.5px solid #000;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .action-btn:hover {
           transform: translate(-1px, -1px);
-          box-shadow: 2px 2px 0px #000;
+          box-shadow: 2px 2px 0px var(--border-color);
         }
 
         .complete-btn:hover {
@@ -231,7 +231,7 @@ export default function TaskCard({ task, onComplete, onFail, onPostpone, readOnl
         }
 
         .fail-btn:hover {
-          background: #fee2e2;
+          background: var(--failed-glow);
         }
 
         .postpone-btn:hover {
@@ -243,19 +243,19 @@ export default function TaskCard({ task, onComplete, onFail, onPostpone, readOnl
         }
 
         .delete-btn:hover {
-          background: #fee2e2;
+          background: var(--failed-glow);
         }
 
         .opponent-lock-badge {
           position: absolute;
           top: 12px;
           right: 12px;
-          background: #ffffff;
+          background: var(--surface-color);
           font-family: var(--font-header);
           font-size: 10px;
           font-weight: 700;
           padding: 1px 6px;
-          box-shadow: 1px 1px 0px #000;
+          box-shadow: 1px 1px 0px var(--border-color);
           display: none;
           align-items: center;
           gap: 4px;

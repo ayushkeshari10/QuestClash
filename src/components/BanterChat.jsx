@@ -100,7 +100,7 @@ export default function BanterChat() {
 
       <style>{`
         .banter-container {
-          background: #ffffff;
+          background: var(--surface-color);
           padding: 20px;
           display: flex;
           flex-direction: column;
@@ -111,7 +111,7 @@ export default function BanterChat() {
         }
 
         .banter-header {
-          border-bottom: 2px solid #000;
+          border-bottom: 2px solid var(--border-color);
           padding-bottom: 8px;
         }
 
@@ -122,11 +122,11 @@ export default function BanterChat() {
 
         .banter-scroller {
           flex-grow: 1;
-          border: 2px solid #000;
+          border: 2px solid var(--border-color);
           border-radius: 6px;
           padding: 12px;
           overflow-y: auto;
-          background: #ffffff;
+          background: var(--surface-color);
           box-shadow: inset 1px 1px 4px rgba(0,0,0,0.1);
         }
 
@@ -171,8 +171,8 @@ export default function BanterChat() {
 
         .msg-bubble {
           padding: 8px 12px;
-          background: #ffffff;
-          box-shadow: 2px 2px 0px #000;
+          background: var(--surface-color);
+          box-shadow: 2px 2px 0px var(--border-color);
           position: relative;
         }
 
@@ -182,7 +182,7 @@ export default function BanterChat() {
 
         .msg-text {
           font-size: 14px;
-          color: #000000;
+          color: var(--text-primary);
           word-break: break-word;
         }
 
@@ -204,14 +204,14 @@ export default function BanterChat() {
           border-radius: 99px;
           padding: 4px 10px;
           font-size: 11px;
-          box-shadow: 1px 1px 0px #000;
-          background: #ffffff;
+          box-shadow: 1px 1px 0px var(--border-color);
+          background: var(--surface-color);
           cursor: pointer;
         }
 
         .quick-pill-btn:hover {
           transform: translate(-1px, -1px);
-          box-shadow: 2px 2px 0px #000;
+          box-shadow: 2px 2px 0px var(--border-color);
         }
 
         .banter-input-form {

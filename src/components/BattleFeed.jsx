@@ -28,12 +28,12 @@ export default function BattleFeed() {
           pointer-events: none;
         }
         .feed-item {
-          background: #ffffff;
+          background: var(--surface-color);
           padding: 8px 16px;
           display: flex;
           align-items: center;
           gap: 6px;
-          box-shadow: 2px 2px 0px #000;
+          box-shadow: 2px 2px 0px var(--border-color);
           font-size: 13px;
         }
         .feed-user {

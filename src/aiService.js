@@ -6,7 +6,7 @@ export async function breakDownTaskWithAI(taskTitle) {
 
   const prompt = `Break down the following goal into 3 small, actionable sub-tasks. Return ONLY a valid JSON array of strings, with no markdown formatting, no backticks, and no other text. Goal: "${taskTitle}"`;
 
-  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent?key=${apiKey}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

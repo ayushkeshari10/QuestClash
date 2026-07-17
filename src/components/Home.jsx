@@ -8,7 +8,7 @@ export default function Home({ onPlayClick }) {
     <div className="home-wrapper animate-fade-in">
       {/* Welcome Banner */}
       <div className="sketch-border home-hero">
-        <h1 className="hero-title">✍️ Welcome to Todo Battle!</h1>
+        <h1 className="hero-title">✍️ Welcome to QuestClash!</h1>
         <p className="hero-subtitle">
           Slay your tasks, sketch your progress, and out-produce your opponents in monochrome style!
         </p>
@@ -81,7 +81,7 @@ export default function Home({ onPlayClick }) {
         }
 
         .home-hero {
-          background: #ffffff;
+          background: var(--surface-color);
           padding: 32px;
           text-align: center;
           box-shadow: var(--shadow-md);
@@ -104,7 +104,7 @@ export default function Home({ onPlayClick }) {
 
         .home-card {
           padding: 24px;
-          background: #ffffff;
+          background: var(--surface-color);
           box-shadow: var(--shadow-sm);
           display: flex;
           flex-direction: column;
@@ -113,7 +113,7 @@ export default function Home({ onPlayClick }) {
 
         .home-card h2 {
           font-size: 20px;
-          border-bottom: 2px solid #000;
+          border-bottom: 2px solid var(--border-color);
           padding-bottom: 8px;
         }
 
@@ -141,7 +141,7 @@ export default function Home({ onPlayClick }) {
 
         .home-status-banner {
           padding: 20px 28px;
-          background: #ffffff;
+          background: var(--surface-color);
           box-shadow: var(--shadow-md);
         }
 
@@ -160,7 +160,16 @@ export default function Home({ onPlayClick }) {
           font-size: 13px;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
+          .home-wrapper {
+            padding: 12px 16px;
+          }
+          .home-hero {
+            padding: 20px 16px;
+          }
+          .hero-title {
+            font-size: 24px;
+          }
           .status-flex {
             flex-direction: column;
             text-align: center;
