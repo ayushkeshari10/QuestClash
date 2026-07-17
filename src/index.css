@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Architects+Daughter&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* High Contrast monochrome scheme */
+  --bg-color: #ffffff;
+  --surface-color: #ffffff;
+  --surface-hover: #f3f4f6;
+  --surface-glass: #ffffff;
+  --border-color: #000000;
+  
+  --primary: #000000;
+  --primary-glow: #f3f4f6;
+  --primary-hover: #111111;
+  
+  --success: #000000;
+  --success-glow: #e2fce6; /* Subtle white-green hatch backup */
+  
+  --failed: #000000;
+  --failed-glow: #fee2e2;  /* Subtle white-red hatch backup */
+  
+  --postponed: #000000;
+  --postponed-glow: #fef3c7; /* Subtle white-orange backup */
+  
+  --text-primary: #000000;
+  --text-muted: #4b5563;
+  --text-dark: #6b7280;
+  
+  /* Handwritten/Sketch Font Families */
+  --font-header: 'Cabin Sketch', cursive, sans-serif;
+  --font-body: 'Architects Daughter', cursive, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Hand-drawn shadows */
+  --shadow-sm: 2px 2px 0px #000000;
+  --shadow-md: 4px 4px 0px #000000;
+  --shadow-lg: 8px 8px 0px #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Header Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 0.02em;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-left: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+}
+
+/* Sketch Border Trick - uneven hand drawn borders */
+.sketch-border {
+  border: 2.5px solid #000000 !important;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px !important;
+}
+
+.sketch-border-subtle {
+  border: 2px solid #000000 !important;
+  border-radius: 12px 6px 10px 8px / 6px 10px 8px 12px !important;
+}
+
+/* Glassmorphism Classes redirected to sketch blocks */
+.glass-panel {
+  background: #ffffff;
+  border: 2.5px solid #000000;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: var(--shadow-md);
+}
+
+.glass-card {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-family: var(--font-header);
+  font-weight: 700;
+  transition: all 0.15s ease;
+  border: 2px solid #000000;
+  background: #ffffff;
+  color: #000000;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: var(--shadow-sm);
+}
+
+button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+  background: var(--surface-hover);
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000000;
+}
+
+.btn-primary {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+}
+
+.btn-primary:hover {
+  background: #222222;
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Priority tags */
+.priority-high {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000 !important;
+  font-weight: 900;
+}
+
+.priority-high::before {
+  content: '⚠️ ';
+}
+
+.priority-medium {
+  background: #ffffff;
+  color: #000000;
+  border: 2px dashed #000000 !important;
+}
+
+.priority-low {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #666666 !important;
+}
+
+/* Status styles */
+.status-completed {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000 !important;
+  text-decoration: line-through;
+}
+
+.status-completed::before {
+  content: '✓ ';
+}
+
+.status-failed {
+  background: #ffffff;
+  color: #000000;
+  border: 2px double #000000 !important;
+}
+
+.status-failed::before {
+  content: '✗ ';
+}
+
+.status-postponed {
+  background: #ffffff;
+  color: #000000;
+  border: 2px dashed #000000 !important;
+}
+
+.status-postponed::before {
+  content: '⏰ ';
+}
+
+.status-pending {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000 !important;
+}
+
+/* Input Fields */
+input[type="text"], 
+textarea, 
+input[type="time"] {
+  background: #ffffff !important;
+  border: 2.5px solid #000000 !important;
+  border-radius: 12px 6px 10px 8px / 6px 10px 8px 12px !important;
+  padding: 12px !important;
+  color: #000000 !important;
+  font-family: var(--font-body) !important;
+  outline: none !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+input[type="text"]:focus, 
+textarea:focus, 
+input[type="time"]:focus {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #000000 !important;
+}
+
+/* Progress Bar styles */
+.matchup-progress-bg {
+  border: 2px solid #000000 !important;
+  background: #ffffff !important;
+  height: 14px !important;
+  border-radius: 8px !important;
+}
+
+.matchup-progress-fill {
+  background: #000000 !important;
+  transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float {
+  animation: float 2.5s ease-in-out infinite;
+}
+
+/* Centered Modal Overlay & Background Blur */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(10px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(180%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 99999 !important;
+  padding: 24px;
+}
+
+.modal-card {
+  background: #ffffff !important;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 6px 6px 0px #000000 !important;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 48px);
+  animation: modal-enter 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2.5px solid #000000;
+  padding: 16px 20px;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: transparent;
+  transform: scale(1.1);
+  box-shadow: none;
+}
+
+.modal-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.priority-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.priority-btn {
+  padding: 6px 4px;
+  font-size: 11px;
+  box-shadow: 1px 1px 0px #000;
+}
+
+.priority-btn.active {
+  background: #000;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* Freeze Report Overlay & Card centering */
+.report-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(10px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(180%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 99999 !important;
+  padding: 24px;
+}
+
+.report-card {
+  background: #ffffff !important;
+  width: 100%;
+  max-width: 800px;
+  padding: 32px;
+  box-shadow: 8px 8px 0px #000000 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+}
+
+@keyframes modal-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
