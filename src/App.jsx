@@ -210,7 +210,7 @@ function AppContent() {
 
         @media (max-width: 1024px) {
           .arena-grid-layout {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
           }
         }
 

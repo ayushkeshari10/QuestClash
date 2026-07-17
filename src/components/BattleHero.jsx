@@ -352,7 +352,7 @@ export default function BattleHero() {
             padding: 16px;
           }
           .battle-matchup.three-player-matchup {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
             gap: 16px;
           }
           .matchup-vs {

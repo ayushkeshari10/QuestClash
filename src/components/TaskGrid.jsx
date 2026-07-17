@@ -401,7 +401,7 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
 
         @media (max-width: 1024px) {
           .task-columns-layout {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
             gap: 20px;
           }
           .opponent-column {
@@ -412,10 +412,10 @@ export default function TaskGrid({ onAddTaskClick, onPostponeClick }) {
 
         @media (max-width: 768px) {
           .mobile-tab-selectors {
-            display: grid;
+            display: grid !important;
           }
           .task-columns-layout {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
           }
           .opponent-column {
             border: none;
